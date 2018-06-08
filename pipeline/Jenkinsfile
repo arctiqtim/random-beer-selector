@@ -2,6 +2,6 @@ node {
     stage 'build'
         openshiftBuild(bldCfg: 'random-beer-selector')
     stage 'deploy'
-        // sh "oc rollout latest dc/random-beer-selector"
-        openshiftDeploy(deploymentConfig: 'dc/random-beer-selector')
+        sh "oc rollout latest dc/random-beer-selector"
+        // openshiftDeploy(deploymentConfig: 'dc/random-beer-selector')
 }
